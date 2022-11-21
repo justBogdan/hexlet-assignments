@@ -6,8 +6,8 @@ import java.util.Set;
 
 // BEGIN
 class App {
-    public static Map < String, Integer > getWordCount(String str) {
-        Map < String, Integer > wordsCount = new HashMap<>();
+    public static Map<String, Integer> getWordCount(String str) {
+        Map<String, Integer> wordsCount = new HashMap<>();
         String[] words = str.split(" ");
         for (var el : words) {
             if (el.equals("")) {
