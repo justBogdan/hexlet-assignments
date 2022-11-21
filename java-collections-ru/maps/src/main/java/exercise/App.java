@@ -28,9 +28,9 @@ class App {
         Set<String> keys = map.keySet();
         var string = "{\n";
         for (var key : keys) {
-            string += "  " + key + ":" + map.get(key) + "\n";
+            string += "  " + key + ": " + map.get(key) + "\n";
         }
-        return string + "}";
+        return string.length() == 2 ? "{}" : string + "}";
     }
 
     public static void main(String[] args) {
