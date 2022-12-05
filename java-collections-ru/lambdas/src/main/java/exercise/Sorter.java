@@ -1,6 +1,7 @@
 package exercise;
 
 // BEGIN
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -9,7 +10,7 @@ public class Sorter {
     public static List<String> takeOldestMans(List<Map<String,String>> users) {
         var result = users.stream()
                 .filter(user -> user.get("gender").equals("male"))
-                .sorted((user1, user2) -> user1.get("birthday").substring(0, 5).compareTo(user2.get("birthday").substring(0,5)))
+                .sorted((user1, user2) -> LocalDate.parse(user1.get("birthday")).compareTo(LocalDate.parse(user2.get("birthday"))))
                 .map(user -> user.get("name"))
                 .collect(Collectors.toList());
         return result;
